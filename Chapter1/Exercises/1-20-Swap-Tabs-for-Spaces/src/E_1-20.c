@@ -14,7 +14,7 @@ main()
 	while( (len = getline( line, MAXLINE ) ) > 0  )
 	{
 		replacetab( line, temp );
-		printf( "%s\n", temp );
+		printf( "%s", temp );
 	}
 }
 

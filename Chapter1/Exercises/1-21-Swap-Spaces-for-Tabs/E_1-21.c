@@ -2,7 +2,8 @@
 #define MAXLINE 1000
 #define TABLENGTH 4
 
-void entab( char s[] );
+void entabv1( char s[] );
+void entabv2( char s[] );
 int getline( char s[], int lim );
 
 main()

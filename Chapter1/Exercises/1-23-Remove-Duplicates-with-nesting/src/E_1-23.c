@@ -19,6 +19,8 @@ void remcomments(char s[])
 	slcflag = mlcflag = qflag = pflag = readindex = writeindex = charcount = whitespace = 0;
 	while (s[readindex] != '\0')
 	{
+		if(s[readindex] == ' ' || s[readindex] == '\t' || s[readindex] == '\n')
+			whitespace++;
 		charcount++;
 		if (slcflag == 1 && s[readindex] == '\n')
 			slcflag = 0;
@@ -28,8 +30,6 @@ void remcomments(char s[])
 		}
 		else if (mlcflag == 0)
 		{
-			if(s[readindex] == ' ' || s[readindex] == '\t' || s[readindex] == '\n')
-				whitespace++;
 			if (s[readindex] == '"' && (s[readindex - 1] != '\\' || (s[readindex - 1] == '\\' && s[readindex - 2] == '\\')))
 				if (qflag == 0) qflag = 1;
 				else qflag = 0;
@@ -48,6 +48,10 @@ void remcomments(char s[])
 			}                                    /*VVV this stops us from reading from a "negative" index and from writing blank lines VVV*/
 			if (slcflag == 0 && mlcflag == 0 && (s[readindex] != '\n' || (s[readindex] == '\n' && writeindex != 0 && s[writeindex - 1] != '\n')))
 			{
+				if(s[writeindex - 1] == ';' && s[readindex] != '\n')
+				{
+					s[writeindex++] = '\n';
+				}
 				s[writeindex] = s[readindex];
 				writeindex++;
 			}

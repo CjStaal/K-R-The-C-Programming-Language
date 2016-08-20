@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define MAXLINE 1000
 #define TABLENGTH 4
 
@@ -12,13 +13,11 @@ main()
 	char linev2[MAXLINE];
 	while( getline( linev1, MAXLINE ) > 0 )
 	{
+		strcpy( linev2, linev1 );
 		entabv1( linev1 );
-		printf( "Output:%s\n", linev1 );
-	}
-	while( getline( linev2, MAXLINE ) > 0 )
-	{
+		printf( "Output1:%s\n", linev1 );
 		entabv2( linev2 );
-		printf( "Output:%s\n", linev2 );
+		printf( "Output2:%s\n", linev2 );
 	}
 }
 

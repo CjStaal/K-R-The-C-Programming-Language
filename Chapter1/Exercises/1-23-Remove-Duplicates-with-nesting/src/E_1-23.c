@@ -5,7 +5,7 @@ void remcomments(char s[]);
 int main(int argc, char *argv[])
 {
 	/*ALL THE EDGE CASES!*/
-	char info[] = "printf(/*test*/\"\\\"test/*iello*/  //more\"/*test*/);/*hello*/ //hello\n//test\n/*test*/\ncode(yeah);//test\n//Hello/*hellooo\nmorecode();/*test*/\ncode(/*test*/yeah);/*\n*\n*\n*/\n//\n/*test*/test\n/*test8*/\nyeahp;";
+	char info[] = "//anotherone\n/*\n*andanotherones\n*/printf(/*test*/\"\\\"test/*iello*/  //more\"/*test*/);/*hello*/ //hello\n//test\n/*test*/\ncode(yeah);//test\n//Hello/*hellooo\nmorecode();/*test*/\ncode(/*test*/yeah);/*\n*\n*\n*/\n//\n/*test*/test\n/*test8*/\nyeahp;";
 	printf("\n\nTEST:\n%s\n", info);
 	remcomments(info);
 	printf("\n\nOUTPUT:\n%s\n", info);

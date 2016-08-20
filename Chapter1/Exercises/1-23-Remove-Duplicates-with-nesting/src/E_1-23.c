@@ -6,9 +6,9 @@ int main(int argc, char *argv[])
 {
 	/*ALL THE EDGE CASES!*/
 	char info[] = "//anotherone\n/*\n*andanotherones\n*/printf(/*test*/\"\\\"test/*iello*/  //more\"/*test*/);/*hello*/ //hello\n//test\n/*test*/\ncode(yeah);//test\n//Hello/*hellooo\nmorecode();/*test*/\ncode(/*test*/yeah);/*\n*\n*\n*/\n//\n/*test*/test\n/*test8*/\nyeahp;";
-	printf("\n\nTEST:\n%s\n", info);
+	printf("\n\nTEST:\n%s", info);
 	remcomments(info);
-	printf("\n\nOUTPUT:\n%s\n", info);
+	printf("\n\nOUTPUT:\n%s", info);
 	return 0;
 
 }
@@ -41,11 +41,11 @@ void remcomments(char s[])
 					readindex++;
 					mlcflag = 1;
 				}
-			}
-			if (slcflag == 0 && mlcflag == 0 && !(s[readindex] == '\n' && s[writeindex - 1] == '\n'))
-			{
-				s[writeindex] = s[readindex];
-				writeindex++;
+			}                                    /*VVV this stops us from reading from a "negative" index and from writing blank lines VVV*/
+			if (slcflag == 0 && mlcflag == 0 && (s[readindex] != '\n' || (s[readindex] == '\n' && writeindex != 0 && s[writeindex - 1] != '\n')))
+			{	
+					s[writeindex] = s[readindex];
+					writeindex++;
 			}
 		}
 		readindex++;

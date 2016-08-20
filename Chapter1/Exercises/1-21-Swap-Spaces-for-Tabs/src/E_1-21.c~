@@ -13,12 +13,12 @@ main()
 	while( getline( linev1, MAXLINE ) > 0 )
 	{
 		entabv1( linev1 );
-		printf( "Output:%s\n", linev1 );
+		printf( "Output:%s", linev1 )
 	}
 	while( getline( linev2, MAXLINE ) > 0 )
 	{
 		entabv2( linev2 );
-		printf( "Output:%s\n", linev2 );
+		printf( "Output:%s", linev2 );
 	}
 }
 

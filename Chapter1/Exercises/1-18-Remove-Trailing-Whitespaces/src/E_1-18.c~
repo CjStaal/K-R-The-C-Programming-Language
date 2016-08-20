@@ -4,7 +4,7 @@
 
 void remove_trailing ( char s[] );
 int getline ( char line[] );
-int get_strlen( char s[] );
+
 main()
 {
 	int len;
@@ -38,9 +38,9 @@ void remove_trailing ( char s[] )
 	int index_of_last_char, index, len;
 
 	index_of_last_char = index = 0;
-	len = get_strlen( s );
+	len = sizeof s;
 
-	for( index = 0; index < len; ++index )
+	for(index = 0; index < len; ++index )
 		if( s[index] != '\t' && s[index] != ' ' && index != '\n')
 			index_of_last_char = index;
 
@@ -53,10 +53,3 @@ void remove_trailing ( char s[] )
 		s[index] = '\0';
 }	 
 
-int get_strlen( char s[] )
-{
-	int i = 0;
-	while( s[i] != '\0' )
-		i++;
-	return i;
-}

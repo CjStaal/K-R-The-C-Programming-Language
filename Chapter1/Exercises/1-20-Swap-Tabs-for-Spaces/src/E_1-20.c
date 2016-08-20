@@ -43,7 +43,6 @@ void replacetab(char s[], char temp[])
 		else
 			temp[i1++] = s[i];
 	}
-	temp[i1++] = '\n';
 	temp[i1] = '\0';
 }
 

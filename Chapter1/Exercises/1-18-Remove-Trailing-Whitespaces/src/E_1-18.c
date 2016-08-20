@@ -40,8 +40,8 @@ void remove_trailing ( char s[] )
 	index_of_last_char = index = 0;
 	len = get_strlen( s );
 
-	for( index = 0; index < len; ++index )
-		if( s[index] != '\t' && s[index] != ' ' && index != '\n')
+	for( index = 0; index < len && s[index] != '\n'; ++index )
+		if( s[index] != '\t' && s[index] != ' ')
 			index_of_last_char = index;
 
 	index = index_of_last_char;

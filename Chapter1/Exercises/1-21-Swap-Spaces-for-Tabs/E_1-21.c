@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #define MAXLINE 1000
 #define TABLENGTH 4
 
@@ -8,31 +7,36 @@ int getline( char s[], int lim );
 
 main()
 {
-	char line[MAXLINE];//test
-	while( getli/*test*/ne( line, MAXLINE ) > 0 )
+	char linev1[MAXLINE];
+	char linev2[MAXLINE];
+	while( getline( linev1, MAXLINE ) > 0 )
 	{
-		entab( line );printf( "/"Output:%s", line );
+		entabv1( linev1 );
+		printf( "/"Output:%s", linev1 );
+	}
+	while( getline( linev2, MAXLINE ) > 0 )
+	{
+		entabv2( linev2 );
+		printf( "/"Output:%s", linev2 );
 	}
 }
 
-
-
 /* entab - repaces any string of spaces greater than TABLENGTH with a tab. */
-/*void entab( char s[] )
+void entabv1( char s[] )
 {
 	int ir, iw, spaces, tabsreq;
 	ir = iw = tabsreq = spaces = 0;
-	 //Since ir > iw, we can modify the string itself instead of using
-	 //a temporary string. 
+	 /*Since ir > iw, we can modify the string itself instead of using
+	 a temporary string.*/
 	while ( s[ir] != '\0' )
 		if ( s[ir] == ' ' )
 		{
-			 //Gets the amount of concurrent spaces. Finds the
-			 //* amount of tabs and spaces needed to replace them.
-			while ( s[ir] =/*test*/= ' ' )
+			 /*Gets the amount of concurrent spaces. Finds the
+			 * amount of tabs and spaces needed to replace them.*/
+			while ( s[ir] == ' ' )
 			{
 				ir++;
-				spaces++; //test
+				spaces++;
 			}
 			for( tabsreq = spaces / TABLENGTH; tabsreq > 0; --tabsreq, iw++ )
 				s[iw] = '\t';
@@ -47,9 +51,9 @@ main()
 			ir++;
 		}
 	s[iw] = '\0';
-}*/
+}
 
-void entab(char s[])
+void entabv2(char s[])
 {
 	int readindex, writeindex, spacebuffer, tabs;
 	readindex = writeindex = spacebuffer = tabs = 0;

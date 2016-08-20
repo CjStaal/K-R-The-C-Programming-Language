@@ -7,14 +7,11 @@ void entab( char s[] );
 int getline( char s[], int lim );
 
 main()
-{/*test*/
+{
 	char line[MAXLINE];//test
 	while( getli/*test*/ne( line, MAXLINE ) > 0 )
 	{
-		entab( line );/*test
-				*
-*
-		*/printf( "/"Output:%s", line );
+		entab( line );printf( "/"Output:%s", line );
 	}
 }
 
@@ -25,13 +22,13 @@ main()
 {
 	int ir, iw, spaces, tabsreq;
 	ir = iw = tabsreq = spaces = 0;
-	 Since ir > iw, we can modify the string itself instead of using
-	 * a temporary string. 
+	 //Since ir > iw, we can modify the string itself instead of using
+	 //a temporary string. 
 	while ( s[ir] != '\0' )
 		if ( s[ir] == ' ' )
 		{
-			 Gets the amount of concurrent spaces. Finds the //test
-			 * amount of tabs and spaces needed to replace them.
+			 //Gets the amount of concurrent spaces. Finds the
+			 //* amount of tabs and spaces needed to replace them.
 			while ( s[ir] =/*test*/= ' ' )
 			{
 				ir++;

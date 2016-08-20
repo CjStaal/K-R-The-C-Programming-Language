@@ -18,7 +18,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Bin folders
-bin/
+bin
 
 # =========================
 # Operating System Files

@@ -25,9 +25,7 @@ void remcomments(char s[])
 		if (slcflag == 1 && s[readindex] == '\n')
 			slcflag = 0;
 		if (mlcflag == 1 && s[readindex - 1] == '*' && s[readindex] == '/')
-		{
 			mlcflag = 0;
-		}
 		else if (mlcflag == 0)
 		{
 			if (s[readindex] == '"' && (s[readindex - 1] != '\\' || (s[readindex - 1] == '\\' && s[readindex - 2] == '\\')))

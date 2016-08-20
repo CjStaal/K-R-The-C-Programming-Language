@@ -5,7 +5,7 @@ void remcomments(char s[]);
 int main(int argc, char *argv[])
 {
 	/*ALL THE EDGE CASES!*/
-	char info[] = "//anotherone\n/*\n*andanotherones\n*/printf(/*test*/\"\\\"test/*iello*/  //more\"/*test*/);/*hello*/ //hello\n//test\n/*test*/\ncode(yeah);//test\n//Hello/*hellooo\nmorecode();/*test*/\ncode(/*test*/yeah);/*\n*\n*\n*/\n//\n/*test*/test\n/*test8*/\nyeahp;";
+	char info[] = "\t\t\t\ntest();\n        \ntest2();\n   		\nprintf(/*test*/\"\\\"test\n\t/*iello*/  //more\"/*test*/);/*hello*/ //hello();//test\n/*test*/\ncode(yeah);//test\n//Hello/*hellooo\nmorecode();/*test*/\ncode(/*test*/yeah);/*\n*\n*\n*/\n//\n/*test*/test();\n/*test8*/\nyeah();\n\t\t\ntest();";
 	printf("\n\nTEST:\n%s", info);
 	remcomments(info);
 	printf("\n\nOUTPUT:\n%s", info);
@@ -15,17 +15,21 @@ int main(int argc, char *argv[])
 
 void remcomments(char s[])
 {
-	int slcflag, mlcflag, qflag;
-	int readindex, writeindex;
-	slcflag = mlcflag = qflag = readindex = writeindex = 0;
+	int slcflag, mlcflag, qflag, pflag, readindex, writeindex, charcount, whitespace;
+	slcflag = mlcflag = qflag = pflag = readindex = writeindex = charcount = whitespace = 0;
 	while (s[readindex] != '\0')
 	{
+		charcount++;
+		if (slcflag == 1 && s[readindex] == '\n')
+			slcflag = 0;
 		if (mlcflag == 1 && s[readindex - 1] == '*' && s[readindex] == '/')
+		{
 			mlcflag = 0;
+		}
 		else if (mlcflag == 0)
 		{
-			if (slcflag == 1 && s[readindex] == '\n')
-				slcflag = 0;
+			if(s[readindex] == ' ' || s[readindex] == '\t' || s[readindex] == '\n')
+				whitespace++;
 			if (s[readindex] == '"' && (s[readindex - 1] != '\\' || (s[readindex - 1] == '\\' && s[readindex - 2] == '\\')))
 				if (qflag == 0) qflag = 1;
 				else qflag = 0;
@@ -43,10 +47,16 @@ void remcomments(char s[])
 				}
 			}                                    /*VVV this stops us from reading from a "negative" index and from writing blank lines VVV*/
 			if (slcflag == 0 && mlcflag == 0 && (s[readindex] != '\n' || (s[readindex] == '\n' && writeindex != 0 && s[writeindex - 1] != '\n')))
-			{	
-					s[writeindex] = s[readindex];
-					writeindex++;
+			{
+				s[writeindex] = s[readindex];
+				writeindex++;
 			}
+		}
+		if(s[readindex] == '\n')
+		{
+			if(whitespace == charcount)
+				writeindex -= whitespace;
+			charcount = whitespace = 0;
 		}
 		readindex++;
 	}

@@ -18,11 +18,11 @@ main()
 	}
 }
 
-int getline(char s[], int max )
+int getline( char s[], int max )
 {
-	int c;
-	int i = 0;
-	for( i = 0; i < ( max - 1 ) && (c = getchar() ) != EOF && c != '\n'; i++ )
+	int c, i;
+	c = i = 0;
+	for( ; i < ( max - 1 ) && (c = getchar() ) != EOF && c != '\n'; i++ )
 		s[i] = c;
 	if( s[i] = '\n' )
 		s[i++] = c;
@@ -30,19 +30,19 @@ int getline(char s[], int max )
 	return i;
 }
 
-void replacetab(char s[], char temp[])
+void replacetab( char s[], char temp[] )
 {
-	int i1 = 0;
-	int i;
+	int readindex, writeindex;
+	readindex = writeindex = 0;
 	int counter;
-	for (i = 0; i < MAXLINE - 1 && s[i] != '\n' && s[i] != '\0'; ++i)
-	{
-		if (s[i] == '\t')
-			for (counter = 0; counter < TABSIZE; counter++)
-				temp[i1++] = ' ';
-		else
-			temp[i1++] = s[i];
-	}
-	temp[i1] = '\0';
-}
 
+	for ( ; readindex < MAXLINE - 1 && s[readindex] != '\0'; ++readindex )
+	{
+		if ( s[readindex] == '\t' )
+			for ( counter = 0; counter < TABSIZE; counter++, writeindex++ )
+				temp[writeindex] = ' ';
+		else
+			temp[writeindex++] = s[readindex];
+	}
+	temp[writeindex] = '\0';
+}

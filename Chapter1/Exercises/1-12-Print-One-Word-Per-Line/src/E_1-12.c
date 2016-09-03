@@ -1,0 +1,1 @@
+#include <stdio.h>#define YES 1#define NO 0main(){	int c;	int newline = NO;		while( ( c = getchar() ) != EOF )	{		if(c != '\n' && c != ' ' && c != '\t')		{			printf( "%c", c );			newline = YES;		}		else if( newline == YES )		{			printf( "\n" );			newline = NO;		}	}}

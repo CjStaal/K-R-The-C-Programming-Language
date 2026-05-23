@@ -26,7 +26,7 @@ int main(void){
                 ++word_lengths[word_length];
                 word_length = 0;
             }
-            else if (word_length > 0 && word_length > MAX_WORD_LENGTH){
+            else if (word_length > 0 && word_length >= MAX_WORD_LENGTH){
                 printf("Word length is larger than buffer.\n");
                 break;
             }

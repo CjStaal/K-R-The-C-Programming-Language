@@ -16,11 +16,12 @@ int main(void){
         else{
             index = line_length -1;
         }
-        for(;(line[index] == ' ' || line[index] == '\t' || line[index] == '\0') && index > 0; --index){
+        for(;index >= 0 && (line[index] == ' ' || line[index] == '\t' ||
+                line[index] == '\0' || line[index] == '\n'); --index){
             line[index] = '\0';
         }
         if(line[0] != '\0'){
-            printf("%s", line);
+            printf("%s\n", line);
         }
     }
     return 0;

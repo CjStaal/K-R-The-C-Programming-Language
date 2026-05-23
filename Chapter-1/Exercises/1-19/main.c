@@ -17,7 +17,7 @@ int reverse(char char_array[]){
         ++array_length;
     }
     index = 0;
-
+    --array_length;
     while(index < array_length){
         temp_holder = char_array[index];
         char_array[index] = char_array[array_length];

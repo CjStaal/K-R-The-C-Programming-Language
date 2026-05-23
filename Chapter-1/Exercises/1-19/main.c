@@ -1,10 +1,19 @@
 #include <stdio.h>
 
+#define MAX_LINE 1000
+
 int reverse(char[]);
 int kr_getline(char[], int);
 
 int main(void){
 
+    int line_length = 0;
+    char char_array[MAX_LINE];
+    while((line_length = kr_getline(char_array, MAX_LINE)) > 0){
+        reverse(char_array);
+        printf("%s", char_array);
+    }
+    return 0;
 }
 
 int reverse(char char_array[]){
@@ -17,7 +26,12 @@ int reverse(char char_array[]){
         ++array_length;
     }
     index = 0;
-    --array_length;
+    --array_length; /* Backs up before the null terminator */
+
+    /* If it ends in a newline, don't touch it */
+    if (char_array[array_length] == '\n'){
+        --array_length;
+    }
     while(index < array_length){
         temp_holder = char_array[index];
         char_array[index] = char_array[array_length];

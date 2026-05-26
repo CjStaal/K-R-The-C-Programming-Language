@@ -33,11 +33,11 @@ The states required are
 |COMMENT_SAW_STAR|*|COMMENT_SAW_STAR|nothing|
 |COMMENT_SAW_STAR|other|IN_COMMENT|nothing|
 |IN_STRING|"|NORMAL|print "|
-|IN_STRING|\\\|STRING_ESCAPE|print \\\|
+|IN_STRING|\|STRING_ESCAPE|print \|
 |IN_STRING|other|IN_STRING|print it|
 |STRING_ESCAPE|any|IN_STRING|print it|
 |IN_CHAR|'|NORMAL|print '|
-|IN_CHAR|\\\|CHAR_ESCAPE|print \\\|
+|IN_CHAR|\|CHAR_ESCAPE|print \|
 |IN_CHAR|other|IN_CHAR|print it|
 |CHAR_ESCAPE|any|IN_CHAR|print it|
 

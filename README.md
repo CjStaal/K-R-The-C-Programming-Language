@@ -16,10 +16,13 @@ Chapter-1/
   Exercises/
     1-01/
       main.c
+    ...
     1-11/
       answer.md
+    ...
     1-12/
       main.c
+    ...etc
 ```
 
 Programming exercises use `main.c`. Written exercises use `answer.md`.

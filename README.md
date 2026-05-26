@@ -19,7 +19,6 @@ Chapter-1/
     ...
     1-11/
       answer.md
-    ...
     1-12/
       main.c
     ...etc

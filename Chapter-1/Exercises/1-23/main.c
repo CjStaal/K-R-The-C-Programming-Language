@@ -12,7 +12,7 @@
 #define STRING_ESCAPE 7
 #define CHAR_ESCAPE 8
 
-int process_char(char, int);
+int process_char(int, int);
 
 int main(void){
     int current_char = '\0';
@@ -26,7 +26,7 @@ int main(void){
     return 0;
 }
 
-int process_char(char current_char, int state){
+int process_char(int current_char, int state){
     switch(state){
         case NORMAL:
             if(current_char == '/'){

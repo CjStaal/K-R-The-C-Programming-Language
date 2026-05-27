@@ -144,8 +144,6 @@ void remove_comments(char char_array[], int max_string_length){
                     state = IN_LINE_COMMENT;
                 }
             break;
-            default:
-            break;
         }
     }
 }

@@ -16,7 +16,7 @@ int main(void){
     printf("Min char value: %d\n", CHAR_MIN);
 
     printf("Maximum signed char value: %d\n", SCHAR_MAX);
-    printf("Minumum signed char value: %d\n", SCHAR_MIN);
+    printf("Minimum signed char value: %d\n", SCHAR_MIN);
     printf("Maximum unsigned char value: %u\n", UCHAR_MAX);
 
     printf("Maximum short value: %d\n", SHRT_MAX);
@@ -24,7 +24,7 @@ int main(void){
     printf("Maximum unsigned short value: %u\n", USHRT_MAX);
 
     printf("Maximum int value: %d\n", INT_MAX);
-    printf("Minumum int value: %d\n", INT_MIN);
+    printf("Minimum int value: %d\n", INT_MIN);
     printf("Maximum unsigned int value: %u\n", UINT_MAX);
 
     printf("Maximum long value: %ld\n", LONG_MAX);
@@ -51,7 +51,7 @@ int main(void){
     signed char schar_max = uchar_max / 2;
     printf("Maximum signed char value: %d\n", schar_max);
     signed char schar_min = -schar_max - 1;
-    printf("Miiumum signed char value: %d\n", schar_min);
+    printf("Miniumum signed char value: %d\n", schar_min);
 
     unsigned short ushrt_max = (unsigned short) (0U - 1U);
     printf("Maximum unsigned short value: %u\n", (unsigned int) ushrt_max);

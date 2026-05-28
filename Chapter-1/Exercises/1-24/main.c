@@ -17,7 +17,7 @@ int main(void){
     char bracket_stack[MAX_DEPTH] = {'\0'};
     int line_stack[MAX_DEPTH] = {'\0'};
     int column_stack[MAX_DEPTH] = {'\0'};
-    int top = 0, column = 0, line = 1, state = NORMAL, current_char = '\0';
+    int top = 0, column = 1, line = 1, state = NORMAL, current_char = '\0';
 
     while((current_char = getchar()) != EOF){
         switch(state){
@@ -158,7 +158,7 @@ int main(void){
             break;
         }
         if(current_char == '\n'){
-            column = 0;
+            column = 1;
             line++;
         }
         else{

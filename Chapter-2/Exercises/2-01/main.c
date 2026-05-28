@@ -11,7 +11,7 @@
 int main(void){
     printf("char number of bits: %d\n", CHAR_BIT);
     printf("Max char value: %d\n", CHAR_MAX);
-    printf("Min char value: %d\n"), CHAR_MIN);
+    printf("Min char value: %d\n", CHAR_MIN);
     printf("Maximum signed char value: %d\n", SCHAR_MAX);
     printf("Minumum signed char value: %d\n", SCHAR_MIN);
     printf("Maximum unsigned char value: %d\n", UCHAR_MAX);

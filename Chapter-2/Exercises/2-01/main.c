@@ -21,11 +21,11 @@ int main(void){
     printf("Maximum int value: %d\n", INT_MAX);
     printf("Minumum int value: %d\n", INT_MIN);
     printf("Maximum unsigned int value: %d\n", UINT_MAX);
-    printf("Maximum long value: %d\n", LONG_MAX);
-    printf("Minimum long value: %d\n", LONG_MIN);
-    printf("Maximum unsigned long value: %d\n", ULONG_MAX);
-    printf("Maximum long long value: %d\n", LLONG_MAX);
-    printf("Minimum long long value: %d\n", LLONG_MIN);
-    printf("Maximum unsigned long long value: %d\n", ULLONG_MAX);
+    printf("Maximum long value: %ld\n", LONG_MAX);
+    printf("Minimum long value: %ld\n", LONG_MIN);
+    printf("Maximum unsigned long value: %lu\n", ULONG_MAX);
+    printf("Maximum long long value: %lld\n", LLONG_MAX);
+    printf("Minimum long long value: %lld\n", LLONG_MIN);
+    printf("Maximum unsigned long long value: %llu\n", ULLONG_MAX);
     return 0;
 }

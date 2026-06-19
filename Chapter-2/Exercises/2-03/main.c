@@ -13,7 +13,7 @@ int checkprefix(char*);
 
 void main(){
 
-    char hex[] = "0xAF81A9cd0f";
+    char hex[] = "0xAF81A1";
     int result = htoi(hex);
     if(result == -1){
         printf("Error\n");

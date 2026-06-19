@@ -6,12 +6,13 @@
 */
 void squeeze(char[], char[]);
 
-void main(){
+int main(){
     char charstring[] = "alright then";
     char removestring[] = "ab";
     printf("String before: %s\nTo be removed: %s\n", charstring, removestring);
     squeeze(charstring, removestring);
     printf("Result: %s\n", charstring);
+    return 0;
 }
 
 void squeeze(char s1[], char s2[]){

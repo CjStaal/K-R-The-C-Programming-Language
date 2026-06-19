@@ -11,7 +11,7 @@ int htoi(char[]);
 int hexvalue(char);
 int checkprefix(char*);
 
-void main(){
+int main(){
 
     char hex[] = "0xAF81A1";
     int result = htoi(hex);

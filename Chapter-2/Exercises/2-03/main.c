@@ -13,19 +13,20 @@ int checkprefix(char*);
 
 void main(){
 
-    char hex[12] = "0xAF81A9cd0f";
+    char hex[] = "0xAF81A9cd0f";
     int result = htoi(hex);
     if(result == -1){
         printf("Error\n");
         return -1;
     }
     printf("%s is %d\n", hex, result);
-    
+
     return 0;
 }
 
 
 int htoi(char hexstring[]){
+    
     int index = checkprefix(hexstring);
 
     if(index == -1){
@@ -60,7 +61,7 @@ int checkprefix(char *hexstring){
         return -1;
     }
 
-    if(hexstring[0] == '0'){
+    if(hexstring[0] == '0' ){
         if(hexstring[1] == 'x' || hexstring[1] == 'X'){
             return 2;
         }

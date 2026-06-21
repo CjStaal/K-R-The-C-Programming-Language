@@ -11,6 +11,15 @@ void escape(char[], char[]);
 void unescape(char[], char[]);
 
 int main(){
+    char original[] = "hello\tworld\nnext line";
+    char escaped[100];
+    char unescaped[100];
+
+    escape(escaped, original);
+    printf("Escaped:\n%s\n", escaped);
+
+    unescape(unescaped, escaped);
+    printf("Unescaped:\n%s\n", unescaped);
 
     return 0;
 }
@@ -37,7 +46,7 @@ void escape(char s[], char t[]){
 }
 
 void unescape(char s[], char t[]){
-    
+
     int read = 0, write = 0;
     for(read = 0, write = 0; t[read] != '\0'; read++){
         switch(t[read]){

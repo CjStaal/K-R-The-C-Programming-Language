@@ -11,6 +11,7 @@
 #define MAXLINE 1000
 
 void expand(const char[], char[]);
+int istype(const int);
 
 int main(){
 
@@ -39,7 +40,18 @@ void expand(const char inputline[], char outputline[]){
     int read = 0, write = 0;
     while (inputline[read] != '\0'){
         if((read > 0 && inputline[read+1] != '\0') && inputline[read] == '-'){
-
+            int start = inputline[read-1];
+            int end = inputline[read+1];
+            if((istype(start) != 0)
+                        && (istype(start) == istype(end))
+                        && (start < end)){
+                start++;
+                while(start <= end){
+                    outputline[write++] = start++;
+               } 
+                read++;
+            }
+            read++;
         }
         else{
             outputline[write++] = inputline[read++];
@@ -47,5 +59,23 @@ void expand(const char inputline[], char outputline[]){
     }
 
     outputline[write] = '\0';
+}
 
+/* returns
+    1 if lowercase,
+    2 if uppercase,
+    3 if digit, or 
+    0 if invalid.*/
+
+int istype(const int input){
+    if(input >= 'a' && input <= 'z'){
+        return 1;
+    }
+    else if (input >= 'A' && input <= 'Z'){
+        return 2;
+    }
+    else if (input >= '0' && input <= '9'){
+        return 3;
+    }
+    return 0;
 }
